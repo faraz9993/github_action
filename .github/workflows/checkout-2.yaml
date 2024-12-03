@@ -8,5 +8,5 @@ jobs:
             - name: List file before
               run: ls -la
             - uses: actions/checkout@v3
-            - name: List files after
-              run: ls -la
+            - name: in which branch we are
+              run: git branch
