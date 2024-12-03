@@ -17,4 +17,4 @@ jobs:
                 git fetch origin
                 git checkout main
             - name: List file after
-              run: la -la
+              run: ls -la
