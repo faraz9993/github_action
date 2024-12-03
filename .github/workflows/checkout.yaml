@@ -16,6 +16,7 @@ jobs:
                 git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GIHTUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
                 git fetch origin
                 git checkout test
+                git branch
             - name: List file after
               run: ls -la
 
