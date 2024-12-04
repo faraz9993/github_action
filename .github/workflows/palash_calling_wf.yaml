@@ -8,19 +8,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Palash_Workflow_1
-        uses: peter-evans/workflow-dispatch@v1
+        uses: peter-evans/workflow-dispatch@v2
         with:
           repository: github_action
           workflow: Palash_Workflow_1.yml
           ref: main
       - name: Trigger Palash_Workflow_2
-        uses: peter-evans/workflow-dispatch@v1
+        uses: peter-evans/workflow-dispatch@v2
         with:
           repository: github_action
           workflow: Palash_Workflow_2.yml
           ref: main  
       - name: Trigger Palash_Workflow_3
-        uses: peter-evans/workflow-dispatch@v1
+        uses: peter-evans/workflow-dispatch@v2
         with:
           repository: github_action
           workflow: Palash_Workflow_3.yml  
