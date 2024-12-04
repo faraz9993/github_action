@@ -1,0 +1,10 @@
+name: Workflow run
+on:
+  workflow_run:
+    workflows: [Palash_Workflow_1, Palash_Workflow_2, Palash_Workflow_3]
+    types: [completed]
+jobs:
+    echo-string:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "I was triggered because 'Repository Events' was completed."
