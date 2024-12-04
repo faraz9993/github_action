@@ -1,0 +1,14 @@
+name: input_parameter
+on: [push]
+
+jobs:
+    log-info:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo $GITHUB_REF
+            - run: |
+                echo "String: ${{ inputs.string }}"
+                echo "Number: ${{ inputs.number }}"
+                echo "Option: ${{ inputs.option }}"
+                echo "Boolean: ${{ inputs.boolean }}"
+                echo "Environment: ${{ inputs.environment }}"
