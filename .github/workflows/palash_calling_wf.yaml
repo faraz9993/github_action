@@ -7,7 +7,7 @@ jobs:
   trigger-workflows:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Palash_Workflow_1
+      - name: Trigger Palash_Workflow_11
         uses: actions/workflow-dispatch@v1
         with:
           repository: github_action
