@@ -1,9 +1,13 @@
 name: Palash_Workflow_1
-on: [push]
 
+on:
+  push:
+    branches:
+      - main  
+  workflow_dispatch:  
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "This is Workflo_1"
+        run: echo "This is Workflow_1"
