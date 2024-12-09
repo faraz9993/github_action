@@ -10,7 +10,7 @@ jobs:
           - name: step 2
 #            continue-on-error: true
             run: |
-                sleep 90 seconds
+                sleep 90
                 echo "step with sleep of 90 seconds"
             timeout-minutes: 1
           - name: Runs on Failure
