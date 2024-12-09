@@ -1,0 +1,14 @@
+name: Continue on error
+on: [push]
+
+jobs:
+    job-1:
+        runs-on: ubuntu-latest
+        steps:
+          - name: print 
+            run: echo "Step-1"
+          - name: step 2
+            continue-on-error: true
+            run: ech "step with an error"
+          - name: Runs on Failure
+            run: echo "Stage-3 has ran even after failure of stage-2"
