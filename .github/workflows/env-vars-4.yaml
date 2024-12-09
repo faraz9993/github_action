@@ -1,0 +1,17 @@
+name: Variable and Secrets
+on: [push]
+
+jobs: 
+    decrypt-file:
+        runs-on: {{ vars.JOBS_RUNNER }}
+        steps: 
+            - uses: actions/checkout@v3
+            - name: Decrypt file
+              env:
+                PASSPHRASE: ${{ secrets.PASSPHRASE }}
+              run: |
+                mkdir $HOME/secrets
+                gpg --quiet --batch --yes --decrypt --passphrase="$PASSPHRASE" --output
+                $HOME/secrets/secret.json secret.json.gpg
+            - name: View encrypted File content #Never use thi step when working on project
+              run: cat $HOME/secrets/secret.json #Never use thi step when working on project
