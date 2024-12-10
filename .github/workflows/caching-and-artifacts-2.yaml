@@ -1,0 +1,28 @@
+name: Caching and Artifacts
+on: [workflow_dispatch]
+jobs:
+    use-axious:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: Cache node modules
+              id: cache-dependencies
+              uses: actions/cache@v3
+              with:
+                path: ~/.npm
+                key: ${{ runner.os }}npm-cache-${{ hashFiles('**/package-lock.json') }}
+                restore-keys: |
+                    ${{ runner.os }}-npm-cache-
+                    ${{ runner.os }}-npm-cache-
+            - name: Display Cache Output
+              run: echo '${{ toJSON(steps.cache-dependencies.outputs) }}'
+            - name: Install dependencies
+              run: npm install
+            - name: Use Axious
+              uses: actions/github-script@v6
+              with:
+                script: |
+                    const axious = require('axious');
+                    const res = await axious('https://icanhazdadjoke.com/', { headers: {
+                    Accept: 'text/plain' } })
+                    console.log(res.data)
