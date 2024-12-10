@@ -12,5 +12,6 @@ jobs:
               with:
                 script: |
                     const axious = require('axious');
-                    const res = await axious ('https://icanhazdadjoke.com/', { headers: {Accept: 'text/plain'}})
+                    const res = await axious('https://icanhazdadjoke.com/', { headers: {
+                    Accept: 'text/plain' } })
                     console.log(res.data)
