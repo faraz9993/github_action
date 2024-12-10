@@ -14,7 +14,7 @@ jobs:
             - name: Display Cache Output
               run: echo '${{ toJSON(steps.cache-dependencies.outputs) }}'
             - name: Install dependencies
-              run: npm install -g npm
+              run: npm install
             - name: Use Axious
               uses: actions/github-script@v6
               with:
