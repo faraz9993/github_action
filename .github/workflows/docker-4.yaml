@@ -44,6 +44,6 @@ jobs:
               uses: docker://technosophos/slack-notify
               env:
                 SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-                SLACK_TITLE: From GitHub Actions
+                SLACK_TITLE: From GitHub Action
                 SLACK_MESSAGE: "Actor: ${{ github.actor }}, Event: ${{ github.event_name }}"
                 SLACK_COLOR: "#723fc4"
