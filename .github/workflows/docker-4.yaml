@@ -44,6 +44,7 @@ jobs:
             - name: Run a bash script
               uses: docker://node:18.16-alpine3.17
               with:
-                run: chmod 777 script.sh
-                entrypoint: ./script.sh
+                entrypoint: |
+                    chmod 777 script.sh
+                    ./script.sh
                 args: "Some String"
