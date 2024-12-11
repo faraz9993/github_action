@@ -1,4 +1,4 @@
-name: Docker3
+name: Docker4
 on: [push]
 
 jobs:
@@ -46,4 +46,4 @@ jobs:
               with:
                 run: chmod +x script.sh
                 entrypoint: ./script.sh
-                args: "Some String"
+                args: "Some Strings"
