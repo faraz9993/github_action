@@ -45,6 +45,6 @@ jobs:
               uses: docker://node:18.16-alpine3.17
               with:
                 entrypoint: |
-                    chmod 777 script.sh
+                    chmod 777 ./script.sh
                     sh script.sh
                 args: "Some String"
